@@ -79,7 +79,6 @@ button:focus {
   -ms-flex-align: center;
   align-items: center;
   background: rgba(19, 19, 19, 0.5);
-  position: fixed;
   z-index: 1; }
 
 .top__hours {
@@ -103,7 +102,7 @@ button:focus {
 
 .brand {
   color: white;
-  font-size: 120px;
+  font-size: 110px;
   margin: 0;
   font-family: "Kaushan Script";
   text-align: center;
@@ -115,6 +114,9 @@ button:focus {
     height: 3px;
     background-color: white;
     margin: 0 auto; }
+  @media (min-width: 660px) {
+    .brand {
+      font-size: 120px; } }
 
 .intro {
   height: 500px;
@@ -147,27 +149,49 @@ button:focus {
 .intro__text {
   color: white;
   font-size: 20px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9); }
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+  padding: 0 20px;
+  text-align: center; }
 
 .degustation {
   margin: 50px auto;
-  width: 670px;
-  min-height: 360px;
-  background: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap; }
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
   @media (min-width: 740px) {
     .degustation {
-      display: none; } }
+      -webkit-box-orient: unset;
+      -webkit-box-direction: unset;
+      -ms-flex-direction: unset;
+      flex-direction: unset;
+      margin: 50px auto;
+      width: 670px;
+      min-height: 360px;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-box-shadow: 0 28px 45px black, 15px 7px 35px black, -15px 7px 35px black, 0 -6px 36px black;
+      box-shadow: 0 28px 45px black, 15px 7px 35px black, -15px 7px 35px black, 0 -6px 36px black; } }
   .degustation img {
-    width: 50%; }
+    width: 85%; }
+    @media (min-width: 740px) {
+      .degustation img {
+        width: 50%;
+        height: 191px; } }
 
 .degustation__label {
+  background: white;
   display: block;
-  width: 50%; }
+  width: 85%; }
+  @media (min-width: 740px) {
+    .degustation__label {
+      width: 50%; } }
 
 .degustation__text {
   font-size: 13px;
@@ -176,29 +200,64 @@ button:focus {
   padding: 10px 22px;
   color: #313131; }
 
+.gourmet {
+  -webkit-box-ordinal-group: 0;
+  -ms-flex-order: -1;
+  order: -1; }
+  @media (min-width: 740px) {
+    .gourmet {
+      -webkit-box-ordinal-group: 1;
+      -ms-flex-order: 0;
+      order: 0; } }
+
+.bonjour {
+  margin-top: 40px; }
+  @media (min-width: 740px) {
+    .bonjour {
+      margin-top: 0; } }
+
 .menu {
   position: relative;
   margin: 50px auto;
-  width: 670px;
+  width: 85%;
   padding-bottom: 15px;
   background: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   overflow: hidden;
   max-height: 310px;
   -webkit-transition: max-height 1s;
   -o-transition: max-height 1s;
   transition: max-height 1s; }
   .menu.visible {
-    max-height: 680px;
+    max-height: 1260px;
     -webkit-transition: max-height 1s;
     -o-transition: max-height 1s;
     transition: max-height 1s; }
+    @media (min-width: 660px) {
+      .menu.visible {
+        max-height: 680px; } }
+  @media (min-width: 660px) {
+    .menu {
+      -webkit-box-orient: unset;
+      -webkit-box-direction: unset;
+      -ms-flex-direction: unset;
+      flex-direction: unset;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -ms-flex-pack: distribute;
+      justify-content: space-around; } }
+  @media (min-width: 740px) {
+    .menu {
+      max-width: 670px; } }
 
 .btn-uncover {
   width: 100%;
@@ -242,8 +301,12 @@ button:focus {
   width: 100%; }
 
 .category {
-  width: 230px;
-  margin: 15px 0 20px; }
+  width: 80%;
+  margin: 15px 0 10px; }
+  @media (min-width: 660px) {
+    .category {
+      width: 230px;
+      margin: 15px 0 20px; } }
 
 .category__title {
   margin: 0 0 25px; }
@@ -276,17 +339,23 @@ button:focus {
   font-style: italic; }
 
 .subscribe {
-  width: 670px;
+  width: 85%;
   margin: 50px auto;
   text-align: center; }
+  @media (min-width: 660px) {
+    .subscribe {
+      max-width: 670px; } }
 
 .subscribe__form {
   margin-top: 10px;
   display: inline-block;
   position: relative; }
+  @media (min-width: 660px) {
+    .subscribe__form {
+      width: 400px; } }
 
 .subscribe__input {
-  width: 400px;
+  width: 100%;
   height: 35px;
   border-radius: 5px;
   border: none;
@@ -336,7 +405,7 @@ button:focus {
     text-decoration: none; }
 
 .footer__group {
-  width: 670px;
+  max-width: 670px;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -365,5 +434,5 @@ button:focus {
   margin-left: 0; }
 
 .copyright {
-  width: 670px;
+  max-width: 670px;
   margin: 10px auto 0; }

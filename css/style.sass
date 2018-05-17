@@ -5,7 +5,8 @@ $text-dark: #313131
 $text-grey: #585858
 $text-light: #ffffff
 $red-dark: #6E0C0C
-$bp-bigger: 'min-width: 740px'
+$bp-bigger: 'min-width: 660px'
+$bp-big: 'min-width: 740px'
 
 html, body
   padding: 0
@@ -81,7 +82,6 @@ button:focus
   justify-content: space-around
   align-items: center
   background: rgba(19,19,19,0.50)
-  position: fixed
   z-index: 1
 
 .top__hours
@@ -105,7 +105,7 @@ button:focus
 
 .brand
   color: white
-  font-size: 120px
+  font-size: 110px
   margin: 0
   font-family: $kaushan
   text-align: center
@@ -117,6 +117,8 @@ button:focus
     height: 3px
     background-color: white
     margin: 0 auto
+  @media ($bp-bigger)
+    font-size: 120px
 
 .intro
   height: 500px
@@ -141,24 +143,35 @@ button:focus
   color: white
   font-size: 20px
   text-shadow: 0 2px 10px rgba(0,0,0,0.90)
+  padding: 0 20px
+  text-align: center
 
 .degustation
   margin: 50px auto
-  width: 670px
-  min-height: 360px
-  background: white
   display: flex
-  flex-wrap: wrap
+  flex-direction: column
+  align-items: center
 
-  @media ($bp-bigger)
-    display: none
+  @media ($bp-big)
+    flex-direction: unset
+    margin: 50px auto
+    width: 670px
+    min-height: 360px
+    flex-wrap: wrap
+    box-shadow: 0 28px 45px black, 15px 7px 35px black, -15px 7px 35px black, 0 -6px 36px black
 
   img
-    width: 50%
+    width: 85%
+    @media ($bp-big)
+      width: 50%
+      height: 191px
 
 .degustation__label
+  background: white
   display: block
-  width: 50%
+  width: 85%
+  @media ($bp-big)
+    width: 50%
 
 .degustation__text
   font-size: 13px
@@ -168,24 +181,40 @@ button:focus
   color: $text-dark
 
 .gourmet
+  order: -1
+  @media ($bp-big)
+    order: 0
 
 .bonjour
+  margin-top: 40px
+  @media ($bp-big)
+    margin-top: 0
 
 .menu
   position: relative
   margin: 50px auto
-  width: 670px
+  width: 85%
   padding-bottom: 15px
   background: white
   display: flex
-  flex-wrap: wrap
-  justify-content: space-around
+  flex-direction: column
+  align-items: center
   overflow: hidden
   max-height: 310px
   transition: max-height 1s
   &.visible
-    max-height: 680px
+    max-height: 1260px
     transition: max-height 1s
+    @media ($bp-bigger)
+      max-height: 680px
+
+  @media ($bp-bigger)
+    flex-direction: unset
+    flex-wrap: wrap
+    justify-content: space-around
+
+  @media ($bp-big)
+    max-width: 670px
 
 .btn-uncover
   width: 100%
@@ -226,8 +255,11 @@ button:focus
   width: 100%
 
 .category
-  width: 230px
-  margin: 15px 0 20px
+  width: 80%
+  margin: 15px 0 10px
+  @media ($bp-bigger)
+    width: 230px
+    margin: 15px 0 20px
 
 .category__title
   margin: 0 0 25px
@@ -263,17 +295,21 @@ button:focus
   font-style: italic
 
 .subscribe
-  width: 670px
+  width: 85%
   margin: 50px auto
   text-align: center
+  @media ($bp-bigger)
+    max-width: 670px
 
 .subscribe__form
   margin-top: 10px
   display: inline-block
   position: relative
+  @media ($bp-bigger)
+    width: 400px
 
 .subscribe__input
-  width: 400px
+  width: 100%
   height: 35px
   border-radius: 5px
   border: none
@@ -318,7 +354,7 @@ button:focus
     text-decoration: none
 
 .footer__group
-  width: 670px
+  max-width: 670px
   margin: 0 auto
   display: flex
   flex-direction: row
@@ -337,5 +373,5 @@ button:focus
 .footer__opening
 
 .copyright
-  width: 670px
+  max-width: 670px
   margin: 10px auto 0
