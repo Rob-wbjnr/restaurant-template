@@ -74,6 +74,7 @@ button:focus
   line-height: 15px
 
 .top
+  font-family: sans-serif
   font-size: 12px
   color: white
   height: 25px
@@ -110,6 +111,7 @@ button:focus
   font-family: $kaushan
   text-align: center
   text-shadow: 0 0 60px rgba(0,0,0,0.80)
+  pointer-events: none
   &::after
     content: ""
     display: block
@@ -134,10 +136,10 @@ button:focus
     display: block
     height: 63px
     width: 100%
-    background: url("/images/intro-after.svg") no-repeat bottom
+    background: url("/images/intro-after.png") no-repeat bottom
     background-size: cover
     position: absolute
-    bottom: -4px
+    bottom: -2px
 
 .intro__text
   color: white
@@ -194,7 +196,7 @@ button:focus
   position: relative
   margin: 50px auto
   width: 85%
-  padding-bottom: 15px
+  padding-bottom: 25px
   background: white
   display: flex
   flex-direction: column
@@ -344,6 +346,9 @@ button:focus
   font-size: 12px
   color: $text-grey
   padding-bottom: 20px
+  text-align: center
+  @media ($bp-big)
+    text-align: left
 
 .footer h3, footer h4
   color: #bdbdbd
@@ -354,24 +359,31 @@ button:focus
     text-decoration: none
 
 .footer__group
-  max-width: 670px
   margin: 0 auto
   display: flex
-  flex-direction: row
-  justify-content: flex-end
+  flex-direction: column
   line-height: 2
+  max-width: 70%
+  @media ($bp-big)
+    flex-direction: row
+    max-width: 670px
 
 .footer__block
   display: flex
   flex-direction: column
-  margin-left: 20px
+  @media ($bp-big)
+    margin-left: 20px
+
 
 .footer__title
-  margin-right: auto
-  margin-left: 0
-
-.footer__opening
+  margin-top: 20px
+  order: 1
+  @media ($bp-big)
+    margin-top: 0
+    margin-left: 0
+    margin-right: auto
+    order: -1
 
 .copyright
   max-width: 670px
-  margin: 10px auto 0
+  margin: 25px auto 10px
